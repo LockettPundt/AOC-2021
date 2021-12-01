@@ -6,18 +6,16 @@ const data = fs.readFileSync('data.txt', 'utf-8');
 const parsedData = splitDataByNewLine(data)
 
 const findNumberOfDepthIncreasesPartTwo = (input) => {
-  const windows = []
-  input.forEach((_, i, arr) => {
+  const windows = input.reduce((obj, _, i, arr) => {
     if (arr[i + 2]) {
-      windows.push(
-        arr.slice(i, i + 3)
+      obj.push(
+        arr.slice(i, i + 3).reduce((sum, x) => sum += Number(x), 0)
       )
     }
-  })
+    return obj
+  }, [])
 
-  return findNumberOfDepthIncreases(
-    windows.map(arr => arr.reduce((sum, x) => sum += Number(x), 0))
-  )
+  return findNumberOfDepthIncreases(windows)
 }
 
 console.log(findNumberOfDepthIncreasesPartTwo(parsedData))
