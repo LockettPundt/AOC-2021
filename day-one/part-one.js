@@ -1,8 +1,3 @@
-import * as fs from 'fs'
-import { splitDataByNewLine } from '../utils/splitData.js'
-
-const data = fs.readFileSync('data.txt', 'utf-8');
-const parsedData = splitDataByNewLine(data)
 
 export const findNumberOfDepthIncreases = (input) => {   
   return input.reduce((sum, x, i, arr) => {
