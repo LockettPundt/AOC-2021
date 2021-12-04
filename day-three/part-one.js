@@ -8,13 +8,13 @@ export const getGammaAndEpsilonValues = (input) =>
     const sumOfOnes = input.reduce((sum, row) => sum += Number(row.split('')[i]),0)
     if (sumOfOnes > input.length / 2) {
       obj.gamma += '1'
-      obj.episolon += '0'
+      obj.epsilon += '0'
     } else {
       obj.gamma += '0'
-      obj.episolon += '1'
+      obj.epsilon += '1'
     }
     return obj
   }, {
     gamma: '',
-    episolon: '',
+    epsilon: '',
   })
