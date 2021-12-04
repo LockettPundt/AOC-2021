@@ -1,6 +1,6 @@
 export const binaryDiagnosticPartOne = (input) => {
-  const { gamma, episolon } = getGammaAndEpsilonValues(input)
-  return parseInt(gamma, 2) * parseInt(episolon, 2)
+  const { gamma, epsilon } = getGammaAndEpsilonValues(input)
+  return parseInt(gamma, 2) * parseInt(epsilon, 2)
 }
 
 export const getGammaAndEpsilonValues = (input) => 
