@@ -5,7 +5,7 @@ import { giantSquidPartTwo } from './part-two';
 import { splitDataByRegEx } from '../utils/splitData';
 import { winningRow, losingBoard, winningColumn } from './test-boards';
 
-describe('AoC Day 3 Tests', () => {
+describe('AoC Day 4 Tests', () => {
   const file = path.join(__dirname, './', 'test-data.txt');
   const data = fs.readFileSync(file, 'utf-8');
   const parsedData = splitDataByRegEx(data, new RegExp(/\s\n/, 'g'));
