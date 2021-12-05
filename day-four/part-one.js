@@ -36,7 +36,12 @@ export const markNumbers = (boardData, num) =>
   );
 
 export const isWinningBoard = (board) => {
-  if (board.some((row) => row.every((r) => r.marked))) {
+  const rowWin = board.some((row) => row.every((r) => r.marked));
+  const columnWin = board[0]
+    .map((_, i) => board.map((row) => row[i]))
+    .some((col) => col.every((c) => c.marked));
+
+  if (columnWin || rowWin) {
     return true;
   }
   return false;
